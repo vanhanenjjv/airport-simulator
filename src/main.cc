@@ -55,7 +55,7 @@ void initialize(int &end_time, int &queue_limit, double &arrival_rate, double &d
     Post: The program prints instructions and initializes the parameters
           end_time, queue_limit, arrival_rate, and departure_rate to
           the specified values.
-    Uses: utility function user_says_yes
+    Uses: utility function user_says_yes (or does it?)
   */
   std::cout 
     << "This program simulates an airport with only one runway." << std::endl
