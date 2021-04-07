@@ -1,6 +1,8 @@
 #ifndef LIST_H
 #define LIST_H
 
+#include <cstddef>
+
 #include "node.h"
 
 template<typename T>
@@ -20,11 +22,6 @@ class List {
   
   public:
     List() {}
-
-    List(std::initializer_list<T> values) {
-      for (T value : values)
-        Add(value);
-    }
     
     ~List() {
       Clear();
@@ -32,10 +29,6 @@ class List {
 
     T &operator [](int index) {
       return NodeAt(index)->value;
-    }
-
-    T At(int index) {
-      return this->operator[](index);
     }
 
     int Count() {
@@ -119,6 +112,9 @@ class List {
 
       previous->next = removed->next;
 
+      if (removed->next == NULL)
+        tail_ = previous;
+
       delete removed;
     }
 
@@ -146,7 +142,6 @@ class List {
         Node<T> *next = current->next;
 
         if (match(current->value)) {
-          std::cout << "deleting " << current->value << '\n';
           previous->next = next;
           delete current;
         }
