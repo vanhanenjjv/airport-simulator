@@ -1,5 +1,5 @@
-#ifndef VERY_NICE_CODE_H
-#define VERY_NICE_CODE_H
+#ifndef ERROR_CODE_H
+#define ERROR_CODE_H
 
 enum Error_code {
 	success, fail, utility_range_error, underflow, overflow, fatal,

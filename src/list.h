@@ -31,6 +31,10 @@ class List {
       return NodeAt(index)->value;
     }
 
+    T &At(int index) {
+      return operator[](index);
+    }
+
     int Count() {
       int count = 0;
 
